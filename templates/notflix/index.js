@@ -6,7 +6,11 @@ export default function Notflix(){
     const [active, setActive] = useState(null)
 
     function handleHover(e){
+        if(active)
+            active.className = styles.box
+        
         e.target.className += ' ' + styles.active
+        setActive(e.target)
     }
 
     return (
